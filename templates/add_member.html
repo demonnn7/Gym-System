@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Member</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="mb-4">添加新会员</h1>
+    <form action="{{ url_for('add_member') }}" method="post">
+        <div class="form-group">
+            <label for="name">用户名</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">性别</label>
+            <input type="text" class="form-control" id="gender" name="gender" required>
+        </div>
+        <div class="form-group">
+            <label for="age">年龄</label>
+            <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="contact">联系电话</label>
+            <input type="text" class="form-control" id="contact" name="contact" required>
+        </div>
+        <div class="form-group">
+            <label for="membership_level">会员等级</label>
+            <input type="text" class="form-control" id="membership_level" name="membership_level" required>
+        </div>
+        <button type="submit" class="btn btn-primary">添加</button>
+        <a href="{{ url_for('manage_members') }}" class="btn btn-secondary">取消</a>
+    </form>
+</body>
+</html>
