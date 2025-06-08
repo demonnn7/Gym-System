@@ -1,0 +1,15 @@
+# Flask 核心
+Flask==3.0.2
+Werkzeug==3.0.2
+
+# PostgreSQL 数据库连接
+psycopg2-binary==2.9.9
+
+# 生产服务器
+gunicorn==21.2.0
+
+# 环境变量管理
+python-dotenv==1.0.1
+
+# Python 版本要求
+python_version >= '3.10'
