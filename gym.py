@@ -1,7 +1,9 @@
+import os
 from flask import Flask, render_template, url_for, request, redirect, session
 import psycopg2
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # 设置一个密钥用于会话管理
+app.secret_key = os.environ.get('SECRET_KEY')  # 从环境变量获取密钥
+app.config['DEBUG'] = False
 
 TRANSACTION_POOLER_URI = (
     "postgresql://postgres.gmevpselpkclylnjgity:abc14789sysu@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres"
@@ -579,5 +581,5 @@ def is_reserved_by_current_user(course_id):
         cursor.close()
         conn.close()
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
